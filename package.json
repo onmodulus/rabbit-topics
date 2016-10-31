@@ -6,11 +6,17 @@
   "bugs": {
     "url": "https://github.com/onmodulus/rabbit-topics/issues"
   },
+  "dependencies": {
+    "@modulus/rabbit-channel": "1.0.0"
+  },
   "devDependencies": {
-    "@modulus/standard": "0.6.0",
     "code": "1.5.0",
     "lab": "6.2.0",
-    "sinon": "1.17.4"
+    "sinon": "1.17.4",
+    "standard": "8.5.0"
+  },
+  "engines": {
+    "node": ">=6"
   },
   "homepage": "https://github.com/onmodulus/rabbit-topics",
   "keywords": [
@@ -29,11 +35,8 @@
   },
   "scripts": {
     "coverage": "lab -r html -o coverage/index.html -r lcov -o coverage/lcov.info",
-    "pretest": "npm run lint",
-    "lint": "mod-standard",
-    "test": "lab -cl"
-  },
-  "dependencies": {
-    "@modulus/rabbit-channel": "1.0.0"
+    "lint": "standard -v",
+    "test": "standard -v && lab -cl",
+    "unit": "lab -cl"
   }
 }
